@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BridgeToConnect</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+<div class="brand">
+  <img src="images/logo.png" alt="BridgeToConnect logo" class="brand-logo">
+  <span class="brand-text">Bridge<span>To</span>Connect</span>
+</div>
+    <nav>
+    <a href="#" data-scroll="home">Home</a>
+        <div class="nav-dropdown">
+    <a href="#courses" class="nav-main" data-scroll="courses">
+        Courses <span class="caret">▾</span>
+    </a>
+
+    <div class="dropdown-menu">
+        <a href="course-analytics.html">Data Analytics</a>
+        <a href="python.html">Python for Data Science</a>
+        <a href="ml.html">Machine Learning</a>
+    </div>
+    </div>
+
+      <a href="#" data-scroll="about">About</a>
+      <a href="#" class="btn" data-scroll="enroll">Enroll Now</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content hero-animate">
+      <h1>Bridge Your Path into Data Science</h1>
+      <p>
+        Job-ready, affordable data science training with real-world projects
+        and industry mentorship.
+      </p>
+      <div class="hero-buttons">
+        <a href="#" class="btn primary" data-scroll="courses">Start Learning</a>
+        <a href="#" class="btn secondary" data-scroll="enroll">Enroll Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <h2>Why BridgeToConnect?</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Industry Curriculum</h3>
+        <p>Designed around real-world hiring requirements.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Hands-On Projects</h3>
+        <p>Build real projects using real datasets.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Career Focused</h3>
+        <p>Portfolio, resume, and interview preparation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses -->
+ <section class="courses" id="courses">
+  <h2>Our Courses</h2>
+  <div class="course-grid">
+
+<a href="course-analytics.html" class="course-link">
+  <div class="course-card">
+    <h3>Data Analytics Essentials</h3>
+    <p>Beginner-friendly introduction to analytics.</p>
+    <span>Beginner</span>
+  </div>
+</a>
+
+<a href="python.html" class="course-link">
+  <div class="course-card">
+    <h3>Python for Data Science</h3>
+    <p>Python, Pandas, NumPy, and data handling.</p>
+    <span>Intermediate</span>
+  </div>
+</a>
+
+<a href="ml.html" class="course-link">
+  <div class="course-card">
+    <h3>Machine Learning Essentials</h3>
+    <p>Understand models and ML workflows.</p>
+    <span>Advanced</span>
+  </div>
+</a>
+
+  </div>
+</section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <h2>About BridgeToConnect</h2>
+    <p>
+
+At BridgeToConnect, we believe that technical skills shouldn't be gated by a language barrier. We noticed a massive gap between what Indian universities teach and what Data Science companies actually require. Our mission is to be the 'Bridge'—providing industry-level Python, SQL, and AI training in a way that is easy to understand, affordable, and focused entirely on getting you hired in the modern tech landscape.
+    </p>
+  </section>
+
+  <!-- Enroll / Contact -->
+  <section class="contact" id="enroll">
+  <div class="contact-header">
+    <h2>Get in touch with us</h2>
+    <p>You are clicks away from your technological future</p>
+  </div>
+
+  <div class="contact-wrapper">
+    <div class="contact-form-card">
+      <form name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+
+<p style="display:none;">
+  <label>
+    Don’t fill this out:
+    <input name="bot-field">
+  </label>
+</p>
+
+
+
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+        </div>
+
+        <div class="form-row">
+          <input type="tel" name="phone" placeholder="Phone Number" required />
+          <input type="text" name="company" placeholder="Company name" />
+        </div>
+
+        <textarea name="message" placeholder="Your Message"></textarea>
+
+        <!-- Captcha (keep your existing logic) -->
+        <div class="captcha-wrapper">
+          <div class="captcha-box">
+            <canvas id="captchaCanvas" width="160" height="50"></canvas>
+            <button type="button" id="reloadCaptcha" aria-label="Reload captcha">
+              ⟳
+            </button>
+          </div>
+          <input type="text" name="captcha" id="captchaInput" placeholder="Enter captcha" required />
+        </div>
+
+        <div class="privacy-box">
+          <input type="checkbox" required />
+          <span>
+            I have read and understand the
+            <a href="privacy.html">Privacy Policy</a>.
+          </span>
+        </div>
+
+        <button type="submit" class="contact-submit">
+          Submit →
+        </button>
+
+      </form>
+    </div>
+  </div>
+</section>
+<section class="ceo-section">
+  <div class="ceo-container">
+
+    <div class="ceo-image">
+      <img src="images/CEO.png" alt="Founder & CEO of BridgeToConnect">
+    </div>
+
+    <div class="ceo-content">
+      <h2>Message from the Founder</h2>
+
+      <p>
+        As the founder of BridgeToConnect, I identified a clear gap between traditional academic learning and the practical skills demanded by today’s tech industry. Many students graduate with knowledge, but without the ability to apply it effectively in real-world roles.
+      </p>
+
+      <p>
+      BridgeToConnect was built to close that gap by delivering accessible, industry-focused training in data science. Our courses emphasize core skills such as Python, SQL, analytics, and AI through hands-on projects and real problem-solving. By keeping learning practical and affordable, we help learners transition confidently from education to meaningful careers.
+      </p>
+
+      <div class="ceo-sign">
+        <strong>Founder & CEO</strong><br>
+        BridgeToConnect
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 BridgeToConnect. All rights reserved.</p>
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
