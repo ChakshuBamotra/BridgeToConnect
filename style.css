@@ -160,7 +160,7 @@ section {
   scroll-margin-top: 72px;
 }
 .features {
-  padding-top: 190px; /* increase this value */
+  padding-top: 190px; 
 }
 
 
@@ -1054,10 +1054,10 @@ nav a {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  object-fit: contain;     /* KEY FIX */
-  background-color: #020617; /* fills empty space cleanly */
+  object-fit: contain;     
+  background-color: #020617;
   border: 3px solid #38bdf8;
-  padding: 6px;            /* gives breathing room */
+  padding: 6px;           
 }
 
 
