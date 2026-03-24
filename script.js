@@ -82,15 +82,13 @@ if (form) {
 /* Initial load */
 drawCaptcha();
 const navbar = document.querySelector(".navbar");
-const hero = document.querySelector(".hero");
 
-const heroHeight = hero.offsetHeight;
+if (navbar) {
+  const syncNavbarState = () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 24);
+  };
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > heroHeight - 80) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-});
+  syncNavbarState();
+  window.addEventListener("scroll", syncNavbarState, { passive: true });
+}
 

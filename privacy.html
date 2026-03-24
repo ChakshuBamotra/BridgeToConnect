@@ -9,72 +9,82 @@
 
   <style>
     :root {
-      --primary-dark: #0f2a44;
-      --secondary-dark: #1e2a4a;
-      --accent: #ff7a00;
-      --page-bg: #e3eaeb;
-      --text-main: #1e293b;
+      --green: #22c55e;
+      --sky: #38bdf8;
+      --text: #f0f4ff;
+      --text-muted: rgba(240,244,255,0.72);
     }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--page-bg);
-      color: var(--text-main);
+      background: #030312;
+      color: var(--text);
       margin: 0;
       line-height: 1.8;
+      overflow-x: hidden;
     }
+
+    /* Orbs */
+    .bg-orbs { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .bg-orbs span { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.38; animation: orbFloat 20s ease-in-out infinite alternate; }
+    .bg-orbs span:nth-child(1) { width: 480px; height: 480px; background: radial-gradient(circle, rgba(56,189,248,0.7), transparent 70%); top: -100px; left: -100px; }
+    .bg-orbs span:nth-child(2) { width: 540px; height: 540px; background: radial-gradient(circle, rgba(167,139,250,0.65), transparent 70%); top: 40%; right: -120px; animation-duration: 25s; animation-delay: -8s; }
+    .bg-orbs span:nth-child(3) { width: 400px; height: 400px; background: radial-gradient(circle, rgba(34,197,94,0.50), transparent 70%); bottom: -80px; left: 30%; animation-duration: 22s; animation-delay: -14s; }
+    @keyframes orbFloat { 0% { transform: translate(0,0) scale(1); } 50% { transform: translate(35px,45px) scale(1.06); } 100% { transform: translate(-25px,-20px) scale(0.96); } }
+
+    body > *:not(.bg-orbs) { position: relative; z-index: 1; }
 
     .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 20px;
-      background: #000;
-      color: #fff;
+      position: absolute; top: -50px; left: 20px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      color: var(--text);
       padding: 8px 14px;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.18);
     }
+    .skip-link:focus { top: 20px; }
 
-    .skip-link:focus {
-      top: 20px;
-    }
-
-    /* ===== Header ===== */
+    /* Header */
     .privacy-hero {
       position: relative;
-      background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
-      padding: 40px 20px 32px;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      padding: 50px 20px 40px;
       text-align: center;
-      color: #ffffff;
+      color: var(--text);
+    }
+    .privacy-hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
     }
 
     .header-back {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      color: #e5e7eb;
+      position: absolute; top: 20px; left: 20px;
+      color: rgba(240,244,255,0.80);
       text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 14px; font-weight: 600;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 6px 16px;
+      border-radius: 20px;
+      transition: background 0.2s;
     }
+    .header-back:hover { background: rgba(255,255,255,0.14); }
 
-    .header-back:hover {
-      text-decoration: underline;
-    }
+    .privacy-hero h1 { margin: 0; font-size: 40px; color: var(--text); font-family: 'Inter', sans-serif; font-weight: 700; }
+    .privacy-hero p { margin-top: 8px; font-size: 15px; color: var(--text-muted); }
 
-    .privacy-hero h1 {
-      margin: 0;
-      font-size: 40px;
-    }
-
-    .privacy-hero p {
-      margin-top: 8px;
-      font-size: 15px;
-      color: #cbd5e1;
-    }
-
-    /* ===== Content ===== */
+    /* Content */
     main {
       max-width: 1000px;
       margin: auto;
@@ -82,79 +92,73 @@
     }
 
     h2 {
-      font-size: 34px;
-      color: var(--secondary-dark);
-      margin-top: 80px;
+      font-size: 32px;
+      color: var(--text);
+      margin-top: 70px;
       margin-bottom: 20px;
+      font-family: 'Inter', sans-serif;
     }
 
     h3 {
-      font-size: 22px;
-      color: var(--accent);
+      font-size: 21px;
+      color: var(--sky);
       margin-top: 40px;
       margin-bottom: 10px;
+      font-family: 'Inter', sans-serif;
     }
 
-    em {
-      font-style: italic;
-      font-weight: 500;
-      color: #0f172a;
-    }
+    em { font-style: italic; font-weight: 600; color: rgba(240,244,255,0.90); }
+    p { font-size: 16px; color: var(--text-muted); margin: 12px 0; }
+    ul { margin: 12px 0 20px 25px; color: var(--text-muted); }
+    li { margin-bottom: 6px; }
 
-    p {
-      font-size: 16px;
-      margin: 12px 0;
-    }
-
-    ul {
-      margin: 12px 0 20px 25px;
-    }
-
-    li {
-      margin-bottom: 6px;
-    }
-
-    /* ===== Opt-out box ===== */
+    /* Opt-out box */
     .optout-box {
-      background: #ffffff;
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-left: 3px solid var(--green);
+      border-radius: 12px;
       padding: 20px;
       margin: 30px 0;
-      border-left: 4px solid #94a3b8;
     }
-
     .optout-box label {
-      display: flex;
-      gap: 10px;
+      display: flex; gap: 10px;
       margin-top: 12px;
       font-size: 14.5px;
       cursor: pointer;
+      color: var(--text-muted);
     }
 
-    /* ===== Footer ===== */
+    /* Footer */
     .privacy-footer {
       width: 100%;
-      background: var(--primary-dark);
+      background: rgba(3,3,18,0.70);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(255,255,255,0.10);
       padding: 22px 0;
     }
-
     .privacy-footer a {
       display: block;
       max-width: 1000px;
       margin: auto;
       padding: 0 20px;
-      color: #ffffff;
+      color: rgba(240,244,255,0.75);
       text-decoration: none;
       font-weight: 600;
       font-size: 15px;
+      transition: color 0.2s;
     }
-
-    .privacy-footer a:hover {
-      text-decoration: underline;
-    }
+    .privacy-footer a:hover { color: var(--text); }
   </style>
 </head>
 
 <body>
+
+<div class="bg-orbs" aria-hidden="true">
+  <span></span><span></span><span></span>
+</div>
 
 <a href="#content" class="skip-link">Skip to main content</a>
 
