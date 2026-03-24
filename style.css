@@ -726,6 +726,55 @@ h2 {
 .ceo-content p { font-size: 17px; line-height: 1.85; color: var(--text-muted); margin-bottom: 12px; }
 .ceo-sign { margin-top: 22px; font-size: 15px; color: rgba(240,244,255,0.75); }
 
+/* ─── COO Section ─── */
+.coo-section {
+  width: 100%;
+  padding: 20px 20px 30px;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+}
+
+.coo-card {
+  width: 100%;
+  max-width: 560px;
+  text-align: center;
+  padding: 26px 24px;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px) saturate(170%);
+  -webkit-backdrop-filter: blur(20px) saturate(170%);
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 16px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+.coo-image-wrap {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.14);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.35);
+}
+
+.coo-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.coo-card h2 {
+  margin-bottom: 8px;
+  font-size: clamp(26px, 3vw, 32px);
+}
+
+.coo-card p {
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
 /* ─── Profile Section ─── */
 .profile-section {
   width: 100%;
@@ -802,6 +851,63 @@ h2 {
   box-shadow: 0 4px 15px rgba(56,189,248,0.25);
 }
 
+/* ─── Student Internship Card ─── */
+.student-section {
+  width: 100%;
+  padding: 40px 20px 90px;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+}
+
+.student-card {
+  max-width: 440px;
+  width: 100%;
+  padding: 34px 30px;
+  text-align: center;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.42), inset 0 1px 0 rgba(255,255,255,0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.student-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+}
+
+.student-image-wrap {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  margin: 0 auto 18px;
+  overflow: hidden;
+  border: 2px solid rgba(34,197,94,0.45);
+  box-shadow: 0 0 0 5px rgba(34,197,94,0.13), 0 14px 34px rgba(0,0,0,0.42);
+}
+
+.student-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.student-details {
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
 /* ─── Footer ─── */
 footer {
   background: rgba(3,3,18,0.70);
@@ -858,4 +964,11 @@ footer {
   nav a { margin: 8px 0; }
   .hero-content h1 { font-size: 30px; }
   .hero-buttons { flex-direction: column; align-items: center; }
+  .student-card {
+    padding: 28px 20px;
+  }
+  .student-image-wrap {
+    width: 140px;
+    height: 140px;
+  }
 }
